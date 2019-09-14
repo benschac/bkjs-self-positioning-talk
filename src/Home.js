@@ -1,10 +1,36 @@
 import React from 'react';
 import logo from './logo.svg';
+import threePanelLayout from './threePanelLayout';
+
 import './App.css';
 
-function App() {
+function Left({
+
+}) {
   return (
-    <div className="App">
+    <>
+      <h3>
+        Left
+      </h3>      
+    </>
+  );
+}
+
+function Right({
+
+}) {
+  return (
+    <>
+      <h3>
+        Right
+      </h3>      
+    </>
+  )
+}
+
+function Home() {
+  return (
+    <>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -19,8 +45,8 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
+    </>
   );
 }
 
-export default App;
+export default threePanelLayout(Left, Home, Right);

@@ -1,5 +1,25 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+
+.layout {
   text-align: center;
+  display: grid;
+  min-height: 100vh;
+  color: white;
+  background: #282c34;
+}
+
+.three-panel {
+  grid-template-columns: minmax(240px ,3fr) minmax(480px, 6fr) minmax(240px, 3fr);
+}
+
+.two-panel-left {
+  grid-template-columns: minmax(720px, 9fr) minmax(240px ,3fr);
+}
+
+.two-panel-right {
+  grid-template-columns: minmax(240px ,3fr) minmax(720px, 9fr);
 }
 
 .App-logo {
@@ -9,8 +29,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /* background-color: red;
+  min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,4 +50,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.right {
+  border-left:  2px solid #61dafb;
+}
+
+.left {
+  border-right: 2px solid #61dafb;
 }
