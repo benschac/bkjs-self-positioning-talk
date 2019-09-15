@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router  , Route } from 'react-router-dom';
+import { BrowserRouter as Router, Link , Route } from 'react-router-dom';
 import './index.css';
 import Home from './Home';
 import About from './About';
@@ -9,6 +9,13 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <Router>
+    <nav className='navigation'>
+      <ul>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/about'>About</Link></li>
+        <li><Link to='/blog'>Blog</Link></li>
+      </ul>
+    </nav>
     <Route exact path='/' component={Home} />
     <Route path='/about' component={About} />
     <Route path='/blog' component={Blog} />
