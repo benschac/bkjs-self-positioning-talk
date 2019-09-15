@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 body {
   background: #282c34;
   overflow: hidden;
@@ -84,6 +91,7 @@ body {
 
 .navigation ul li:first-child {
   flex-basis: calc(100vw - 100px);
+  padding-left: 20px;
 }
 
 .navigation ul li {
@@ -93,4 +101,30 @@ body {
 .navigation a {
   text-decoration: none;
   color: white;
+}
+
+.hoverable .item {
+  display: none;
+}
+
+.hoverable:hover .item {
+  display: block;
+}
+
+.item {
+  border: 2px solid white;
+  padding: 10px;
+  border-radius: 25px;
+  background: #61dafb;
+  color: #282c34;
+}
+
+.item .right {
+  position: absolute;
+  left: -12px;
+  top: 25px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  border-right: 10px solid white;
+  border-left: transparent;
 }

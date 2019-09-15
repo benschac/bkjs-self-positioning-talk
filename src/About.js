@@ -2,9 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import twoThirdsLeft from "./twoThirdsLeft";
 
-function Right({
-
-}) {
+function Right() {
   return (
     <>
       <h3>

@@ -1,24 +1,38 @@
 import React from 'react';
 import logo from './logo.svg';
 import threePanelLayout from './threePanelLayout';
+import DumbTip from './DumbTip';
 
 import './App.css';
 
-function Left({
-
-}) {
+function Left() {
   return (
     <>
       <h3>
         Left
-      </h3>      
+      </h3>
+      <ul>
+        <DumbTip
+          content='You have some very informative content. Probably referencing a good dog.'
+          top='-25px'
+          left='160px'
+          position='right'
+          
+        >
+          <li>My</li>
+        </DumbTip>
+
+          <li>Name</li>
+       
+          <li>Is</li>
+        
+          <li>Benjamin</li>
+      </ul>
     </>
   );
 }
 
-function Right({
-
-}) {
+function Right() {
   return (
     <>
       <h3>

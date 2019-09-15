@@ -3,9 +3,7 @@ import logo from './logo.svg';
 import twoThirdsRight from './twoThirdsRight';
 
 
-function Left({
-
-}) {
+function Left() {
   return (
     <>
       <h3>
