@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import logo from './logo.svg';
 import threePanelLayout from './threePanelLayout';
 import DumbTip from './DumbTip';
+import SmartTip from './SmartTip';
 
 import './App.css';
 
@@ -18,10 +19,18 @@ function Left() {
           top='-28px'
           left='180px'
           position='right'
-          
+          hoverable
         >
           <li>Oats The Dog</li>
         </DumbTip>
+        <SmartTip
+          position='right'
+          top='-28px'
+          left='200px'
+          content='You have some very important content. It is about a good dog. The good dog is named Oats'
+        >
+          <li className='goodboy'>Is a very good boy</li>
+        </SmartTip>
       </ul>
     </>
   );
