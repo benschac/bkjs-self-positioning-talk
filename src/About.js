@@ -1,13 +1,16 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import logo from './logo.svg';
 import twoThirdsLeft from "./twoThirdsLeft";
 
 function Right() {
+  const step = useSelector(state => state.step);
   return (
     <>
       <h3>
         Right
-      </h3>      
+      </h3>
+      {step}
     </>
   );
 }

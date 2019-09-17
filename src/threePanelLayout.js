@@ -1,9 +1,7 @@
 import React from 'react';
 
-
 function threePanelLayout(Left, Center, Right) {
-
-  return function (props) {
+  return function (props) {    
     return (
       <>
         <main className="layout three-panel">
