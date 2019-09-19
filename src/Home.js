@@ -50,9 +50,8 @@ function Right() {
         <DumbTip
           content='New Jersey Devils will win the Cup this year'
           top='-20px'
-          right='190px'
+          right='195px'
           position='left'
-          hoverable
         >
           <li>A Cool Feature</li>
         </DumbTip>
@@ -70,6 +69,7 @@ function Right() {
           top='-28px'
           left='180px'
           position='right'
+          hoverable
           
         >
           <li>The Documentation</li>
@@ -79,6 +79,7 @@ function Right() {
           top='-28px'
           left='180px'
           position='right'
+          hoverable
         >
           <li>Interactive Playground</li>
         </DumbTip>
