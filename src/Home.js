@@ -27,7 +27,8 @@ function Left() {
           position='right'
           top='-28px'
           offSetLeft={78}
-          content='You have some very important content. It is about a good dog. The good dog is named Oats'
+          hoverable
+          content='You have some very important content. It is about a good dog. The good dog is named Oats on the about page'
         >
           <li className='goodboy'>Is a very good boy</li>
         </SmartTip>
@@ -46,13 +47,13 @@ function Right() {
       <h3 onClick={() => dispatch({type: 'NEXT_STEP'})}>
         Right
       </h3>
-      { step }
       <ul className='list'>
         <DumbTip
           content='New Jersey Devils will win the Cup this year'
           top='-20px'
           right='195px'
           position='left'
+          hoverable
         >
           <li>A Cool Feature</li>
         </DumbTip>
@@ -66,20 +67,29 @@ function Right() {
           <li>A Great Feature</li>
         </DumbTip>
         <DumbTip
-          content='Then you start fucking around with media queries. As you start ripping large chunks of hair out of your head'
-          top='-28px'
-          left='180px'
-          position='right'
+          content='and everything is going well, you start re-sizing the browser...and your get to the fluid width break point' 
+          top='-23px'
+          right='190px'
+          position='left'
           hoverable
-          
         >
-          <li>The Documentation</li>
+          <li>A Great Feature</li>
+        </DumbTip>
+
+        <DumbTip
+          content='Then you start fucking around with media queries. As you start ripping large chunks of hair out of your head'
+          top='-23px'
+          right='190px'
+          position='left'
+          hoverable
+        >
+          <li>A Great Feature</li>
         </DumbTip>
         <DumbTip
-          content='You have some very important content. It is about a good dog. The good dog is named Oats'
+          content={`That happened to me. I wrote this <a href="https://medium.com/hackernoon/self-positioning-react-components-7e5d99e9349f">blog post</a>`}
           top='-28px'
           left='180px'
-          position='right'
+          position='left'
           hoverable
         >
           <li>Interactive Playground</li>

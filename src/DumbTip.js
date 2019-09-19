@@ -25,7 +25,7 @@ const DumbTip = React.forwardRef(({
           bottom,
         }}>
           <div className={position}></div>
-          <div>{content}</div>
+          <div dangerouslySetInnerHTML={{__html: content}}></div>
         </div>
       <div className="children" ref={ref}>{children}</div>
     </div>

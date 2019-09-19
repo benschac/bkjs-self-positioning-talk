@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import logo from './logo.svg';
+import DumbTip from './DumbTip';
 import twoThirdsLeft from "./twoThirdsLeft";
 import Oates from './Oates.jpeg';
 
@@ -11,7 +11,6 @@ function Right() {
       <h3>
         Right
       </h3>
-      {step}
     </>
   );
 }

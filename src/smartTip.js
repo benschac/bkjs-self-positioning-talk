@@ -3,7 +3,7 @@ import DumbTip from './DumbTip';
 
 function SmartTip(props) {
   // This is really geared toward the tutorial --> I should de-couple it at some point.
-  const [selfPosition, setPosition] = useState({ display: false });
+  const [selfPosition, setPosition] = useState({ left: -9999, display: false });
   const ref = useRef(null);
   // When the component mounts --> add an event listener
   useEffect(() => {
