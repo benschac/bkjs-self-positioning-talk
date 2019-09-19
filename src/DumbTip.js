@@ -1,6 +1,6 @@
 import React from 'react';
 
-function DumbTip({
+const DumbTip = React.forwardRef(({
   top,
   right,
   bottom,
@@ -9,8 +9,7 @@ function DumbTip({
   content,
   hoverable,
   position
-}) {
-  
+}, ref) => {
   return (
     <div
       className={hoverable && 'hoverable'} 
@@ -28,9 +27,8 @@ function DumbTip({
           <div className={position}></div>
           <div>{content}</div>
         </div>
-      {children}
+      <div className="children" ref={ref}>{children}</div>
     </div>
   );
-}
-
+});
 export default DumbTip;

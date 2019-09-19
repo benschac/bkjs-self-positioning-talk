@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import logo from './logo.svg';
 import threePanelLayout from './threePanelLayout';
 import DumbTip from './DumbTip';
-import SmartTip from './SmartTip';
+import SmartTip from './smartTip';
 
 import './App.css';
 
@@ -13,7 +13,7 @@ function Left() {
       <h3>
         Left
       </h3>
-      <ul>
+      <ul className="list">
         <DumbTip
           content='You have some very important content. It is about a good dog. The good dog is named Oats'
           top='-28px'
@@ -26,7 +26,6 @@ function Left() {
         <SmartTip
           position='right'
           top='-28px'
-          left='200px'
           content='You have some very important content. It is about a good dog. The good dog is named Oats'
         >
           <li className='goodboy'>Is a very good boy</li>

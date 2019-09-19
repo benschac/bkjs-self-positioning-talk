@@ -1,91 +1,47 @@
-import React, { useState, useEffect } from 'react';
-import { findDOMNode } from 'react-dom';
+import React, { useState, useRef, useEffect } from 'react';
 import DumbTip from './DumbTip';
 
 function SmartTip(props) {
-  // This is really geard toward the tutorial --> I should de-couple it at some point.
-  const { selfPosition, setPosition } = useState({ display: false });
-
+  // This is really geared toward the tutorial --> I should de-couple it at some point.
+  const [selfPosition, setPosition] = useState({ display: false });
+  const ref = useRef(null);
   // When the component mounts --> add an event listener
   useEffect(() => {
     // TODO: Add a throttle
     window.addEventListener('resize', setStyles);
+    setStyles()
 
-    return window.removeEventListener('resize', setStyles);
+    return () => window.removeEventListener('resize', setStyles);
   }, []); //eslint-disable-line
-
-  // Get new styles a step in the tutorial changes.
-  // useEffect(() => {
-  //  setStyles(); 
-  // }, [step]); //eslint-disable-line
-
 
 
   function setStyles() {
-    const el = document.querySelector(`goodboy`)
-        , bounds = el && el.getBoundingClientRect()
-        ;
-
-    console.log('hello from setStyles', bounds, el);  
-    // TODO: this can be dry-er.
-    if (bounds) {
-
-      switch(props.position) {
-        case 'right':
-          console.log('from right');
-          setPosition({
-            top: Math.floor(bounds.top),
-            left: Math.floor((bounds.right)),
-            display: true
-          });
-          break;
-        // case 'left':
-        //   setPosition({
-        //     top: Math.floor(bounds.top - meta.offsetTop),
-        //     left: Math.floor((bounds.left) + meta.offsetLeft),
-        //     display: true
-        //   });
-        //   break;
-        // case 'bottom':
-        //   setPosition({
-        //     top: Math.floor(bounds.top - meta.offsetTop),
-        //     left: Math.floor((bounds.right - bounds.width) + meta.offsetLeft),
-        //     display: true
-        //   });
-        //   break;
-        // case 'bottom-left':
-        //   setPosition({
-        //     top: Math.floor(bounds.top - meta.offsetTop),
-        //     left: Math.floor((bounds.right - bounds.width) + meta.offsetLeft),
-        //     display: true,
-        //   })
-        //   break;
-        default:
-          break;
-      }
+    const bounds = ref.current && ref.current.getClientRects()[0];
+    // console.log('hello world', ref, bounds, Date.now())
+    
+    console.log(bounds.left, bounds.right, ref.current);
+    switch(props.position) {
+      case 'right':
+        setPosition({
+          top: bounds.top - 175,
+          left: bounds.left
+        });
+        break;
+      default:
+        break;
     }
   }
 
-  function getStyles() {
-    const styles = {
-      top: selfPosition.top || 'auto',
-      right: selfPosition.right || 'auto',
-      bottom: selfPosition.bottom || 'auto',
-      left: selfPosition.left || 'auto'
-    }
-
-    if (!props.position.display) {
-      styles.display = 'none'
-    }
-
-    return styles;
-  }
 
 
+
+  
+  
   return (
     <DumbTip
       {...props}
-      {...setStyles()}
+      ref={ref}
+      {...selfPosition}
     >
       { props.children }
     </DumbTip>

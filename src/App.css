@@ -9,6 +9,11 @@ ul {
   list-style: none;
 }
 
+.list {
+  max-width: 150px;
+  margin: 0 auto;
+}
+
 body {
   background: #282c34;
   overflow: hidden;
