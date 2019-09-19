@@ -23,7 +23,7 @@ function SmartTip(props) {
       case 'right':
         setPosition({
           top: bounds.top - 175,
-          left: (bounds.right / 2) + 78,
+          left: (bounds.right / 2) + props.offSetLeft,
           display: true
         });
         break;

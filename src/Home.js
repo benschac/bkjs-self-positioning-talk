@@ -26,6 +26,7 @@ function Left() {
         <SmartTip
           position='right'
           top='-28px'
+          offSetLeft={78}
           content='You have some very important content. It is about a good dog. The good dog is named Oats'
         >
           <li className='goodboy'>Is a very good boy</li>
