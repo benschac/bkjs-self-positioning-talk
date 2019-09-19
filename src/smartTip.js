@@ -17,14 +17,14 @@ function SmartTip(props) {
 
   function setStyles() {
     const bounds = ref.current && ref.current.getClientRects()[0];
-    // console.log('hello world', ref, bounds, Date.now())
+    console.log('hello world', bounds.left, 'right', bounds.right, 'width', bounds.width, Date.now())
     
-    console.log(bounds.left, bounds.right, ref.current);
+    // console.log(bounds.left, bounds.right, ref.current);
     switch(props.position) {
       case 'right':
         setPosition({
           top: bounds.top - 175,
-          left: bounds.left
+          left: (bounds.right / 2) + 75
         });
         break;
       default:
